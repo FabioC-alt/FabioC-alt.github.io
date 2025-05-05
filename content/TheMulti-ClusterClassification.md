@@ -11,6 +11,8 @@ Contro:
 I cluster dipendenti sono occupati con la gestione delle richieste di pull per ricevere le direttive dal master -> mitigato dal fatto che se crashano, non è un problema
 I cluster slave ricevono le direttive solo quando fanno polling al master, questo implica che le modifiche non sono subito effettive.
 
+![[HubSpoke.drawio.png]]
+
 
 # Master-Slave
 [[Rancher]]
@@ -25,7 +27,7 @@ Contro:
 Questo approccio molto più a stretto contatto nel rapporto tra master e slave, rischia di rendere gli slave troppo dipendenti dal master.
 Rancher ha sviluppato una procedura per il quale se un cluster agent smette di comunicare, uno dei node agent crea un tunnel per comunicare con il master e continuare a ricevere direttive.
 
-
+![[MasterSlave.png]]
 # Consumer-Provider
 [[Liqo]]
 
@@ -36,6 +38,8 @@ Si aumentano le capacità di computazione e gestione delle risorse. Aumenta la g
 
 Contro:
 In questo sistema non c'è veramente un limite tra un cluster e un'altro, quindi se su un cluster è in esecuzione una applicazione e questo crasha, potrebbe portare con sé delle parti dell'applicazione importanti per il suo funzionamento.
+
+![[P2P.png]]
 
 # Connections 
 ## Tunnel Based
