@@ -149,6 +149,20 @@ In the node agent pattern, resources are needed for only a single proxy that man
 Because the node agent pattern requires  only one proxy it is easier for the organizations to implement as it needs less configurations.
 
 ### Istio Service Mesh 
+The Istio Service Mesh was previously offered only with the sidecar implementation of the service mesh, but expanding needs of users for a more resource-efficient and easy-to-use solution have motivated Istio to explore sidecarless options for service mesh.
 
+The adoption of the sidecar pattern for Istio has not been without its problems and challenges. Creators of Istio have identified three notable issues in the sidecar model: 
+- race conditions: refers to the already mentioned scenario where the workload becomes available before the sidecar proxy in the pod
+- misinterpretation of L7 protocols: problems may arise from the sidecar's interpretation of these protocols, especially when libraries incorrectly implement the protocl but still utilize the sidecar for communications
+- "all-or-nothing proposition"(Sum, Posta, 2022): It is not possible to adopt only certain features of Istio. Even if the user needs only mTLS feature, the L7 features are also implemented in the proxy, regardless of their use.
 
 ### Cilium Service Mesh 
+
+The approach adopted by Cilium eliminates the race conditions during pod startup by using a single proxy. It reduces operational complexity, allowing for easier management of network policies.
+![[Pasted image 20250506120015.png]]
+
+Cilium creates a Ciliium agent that runs on each cluster node. This cilium agent manages eBPF programs and handles the traffic at L7.
+
+To handle the limited stack space, not allowing open-ended loops, Cilium uses a proxy to handle mechanism that are not possible in the limited kernel space.
+
+
