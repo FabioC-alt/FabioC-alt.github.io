@@ -134,6 +134,21 @@ Service meshes challenges are:
 - Support for high performance 
 - Adaptability
 - Availability
+##### Sidecarless Pattern
+In the sidecarless pattern it is possible to handle service-to-service communication within service meshes.
+The problem with the sidecar pattern arise because it is quite expensive and challenging to position a sidecar in each pod given that for each sidecar some resources are necessary.
+As the number of pods increases, so does the resource demand for the service mesh.
+
+A pattern that has become more popular for the service meshes without sidecars is the **node agent** pattern. In this approach instead of assigning a proxy to every pod on Kubernetes node a single proxy is created for the node. The node acts as a proxy for all services running on it. 
+![[Pasted image 20250506113358.png]]
+
+While the specifics of how a node agent is created and functions may vary between implementations. 
+The node agent pattern offers multiple benefits over the sidecar pattern. The most noticeable difference is in resource utlization.
+
+In the node agent pattern, resources are needed for only a single proxy that manages communication with all the pods on the node.
+Because the node agent pattern requires  only one proxy it is easier for the organizations to implement as it needs less configurations.
+
+### Istio Service Mesh 
 
 
-
+### Cilium Service Mesh 
