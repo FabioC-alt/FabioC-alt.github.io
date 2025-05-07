@@ -1,6 +1,10 @@
 ---
 title: Welcome to Quartz
 ---
+Fabio A. Ciraci master thesis on multi-cluster and observability.
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Chapters:
+
+- Networking Models: https://fabioc-alt.github.io/NetworkModels
+- Multi-Cluster Classification: https://fabioc-alt.github.io/TheMulti-ClusterClassification
+
