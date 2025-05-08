@@ -41,7 +41,11 @@ Liqo follows the pattern **peer-to-peer** previously examined.
 
 
 [1]https://karmada.io/
+
 [2]https://karmada.io/docs/userguide/clustermanager/cluster-registration
+
 [3]https://docs.liqo.io/en/v1.0.0/
+
 [4]https://docs.liqo.io/en/v1.0.0/features/offloading.html#virtual-node
+
 [5]https://docs.liqo.io/en/v1.0.0/features/peering.html
