@@ -14,9 +14,13 @@ Each `karmada-agent` serves a cluster and takes responsibility for:
 - Watching manifests from Karmada execution space and deploying the watched resources to the cluster the agent serves.
 
 The Karamada `Pull` mode manages the cluster using the hub-spoke pattern, while the `Push` mode uses the master-slave approach to the cluster management.
-
-
 # Liqo
+
+Liqo is an open source project that enables **dynamic and seamless kubernetes** multi-cluster topologies.[3]
+
+Liqo's particular feature is the **peering** method. In Liqo,**peering** as a unidirectional resource and service consumption relationship between two Kubernetes clusters, with one cluster (i.e., the **consumer**) granted the capability to offload tasks (_pods_) and propagate resources (_volumes_, _secrets_, etc.) to a remote cluster (i.e., the **provider**), but not vice versa.
+
+This configuration allows for maximum flexibility in asymmetric setups, while transparently supporting bidirectional peerings through their combination. Additionally, the same cluster can play the role of provider and consumer in multiple peerings.
 
 ****
 # Comparison Table
@@ -29,3 +33,5 @@ The Karamada `Pull` mode manages the cluster using the hub-spoke pattern, while 
 
 [1]https://karmada.io/
 [2]https://karmada.io/docs/userguide/clustermanager/cluster-registration
+[3]https://docs.liqo.io/en/v1.0.0/
+[4]https://docs.liqo.io/en/v1.0.0/features/peering.html
