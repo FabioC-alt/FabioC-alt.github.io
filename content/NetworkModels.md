@@ -1,21 +1,4 @@
 
-Networking Models in Cloud Enviroment:
-https://www.sciencedirect.com/science/article/pii/S108480451500288X
-
-A multi-cloud service mesh approach applied to Internet of Things:
-https://ieeexplore.ieee.org/abstract/document/9968384
-
-Optimizing Service Selection and Load Balancing in Multi-Cluster Microservice Systems with MCOSS
-https://ieeexplore.ieee.org/document/10186445
-
-Kubernetes Networking: Comparative Insights into API Gateways and Service Mesh Implementations
-https://aaltodoc.aalto.fi/items/4ca5e5cd-83ca-46d6-8154-7ef0dad8726e
-
-Security Risks for Sidecar Containers in Kubernetes
-https://aaltodoc.aalto.fi/items/d6febcaa-09e4-4bdd-acda-0feb49a5b9f5
-
-
-****
 # Kubernetes Networking: Comparative Insights into API Gateways and Service Mesh Implementations
 
 ## Cloud Native Networking
@@ -166,3 +149,6 @@ Cilium creates a Ciliium agent that runs on each cluster node. This cilium agent
 To handle the limited stack space, not allowing open-ended loops, Cilium uses a proxy to handle mechanism that are not possible in the limited kernel space.
 
 
+# References
+Kubernetes Networking: Comparative Insights into API Gateways and Service Mesh Implementations
+https://aaltodoc.aalto.fi/items/4ca5e5cd-83ca-46d6-8154-7ef0dad8726e
