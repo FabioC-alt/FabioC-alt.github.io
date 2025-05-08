@@ -18,9 +18,17 @@ The Karamada `Pull` mode manages the cluster using the hub-spoke pattern, while 
 
 Liqo is an open source project that enables **dynamic and seamless kubernetes** multi-cluster topologies.[3]
 
-Liqo's particular feature is the **peering** method. In Liqo,**peering** as a unidirectional resource and service consumption relationship between two Kubernetes clusters, with one cluster (i.e., the **consumer**) granted the capability to offload tasks (_pods_) and propagate resources (_volumes_, _secrets_, etc.) to a remote cluster (i.e., the **provider**), but not vice versa.
+## Virtual Node
+Liqo leverage the virtual node concept. The virtual node abstraction is implemented using an extended version of the _Virtual Kublet 
+Project_.[4]
+
+The virtual kubelet replaces a traditional kubelet when the controlled entity is not a physical node, allowing to control arbitrary objects through standard kubernetes APIs.
+
+Liqo's particular feature is the **peering** method. In Liqo,**peering** as a unidirectional resource and service consumption relationship between two Kubernetes clusters, with one cluster (i.e., the **consumer**) granted the capability to offload tasks (_pods_) and propagate resources (_volumes_, _secrets_, etc.) to a remote cluster (i.e., the **provider**), but not vice versa.[5]
 
 This configuration allows for maximum flexibility in asymmetric setups, while transparently supporting bidirectional peerings through their combination. Additionally, the same cluster can play the role of provider and consumer in multiple peerings.
+
+Liqo follows the pattern **peer-to-peer** previously examined.
 
 ****
 # Comparison Table
@@ -34,4 +42,5 @@ This configuration allows for maximum flexibility in asymmetric setups, while tr
 [1]https://karmada.io/
 [2]https://karmada.io/docs/userguide/clustermanager/cluster-registration
 [3]https://docs.liqo.io/en/v1.0.0/
-[4]https://docs.liqo.io/en/v1.0.0/features/peering.html
+[4]https://docs.liqo.io/en/v1.0.0/features/offloading.html#virtual-node
+[5]https://docs.liqo.io/en/v1.0.0/features/peering.html
