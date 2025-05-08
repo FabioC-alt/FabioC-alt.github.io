@@ -1,6 +1,5 @@
 # Karmada
 Karmada is a Kubernetes management system that makes possible to run a cloud-native application managing multiple clusters which runs Kubernetes, so by speaking Kubernetes-native API and providing advanced solutions for scheduling capabilities. [1]
-
 ### Core functioning and Components
 Karmada control plane can manages the clusters using two different methods depending on the Cluster Registration Mode.
 
@@ -14,11 +13,13 @@ Each `karmada-agent` serves a cluster and takes responsibility for:
 - Watching manifests from Karmada execution space and deploying the watched resources to the cluster the agent serves.
 
 The Karamada `Pull` mode manages the cluster using the hub-spoke pattern, while the `Push` mode uses the master-slave approach to the cluster management.
+
 # Liqo
 
 Liqo is an open source project that enables **dynamic and seamless kubernetes** multi-cluster topologies.[3]
 
 ## Virtual Node
+
 Liqo leverage the virtual node concept. The virtual node abstraction is implemented using an extended version of the _Virtual Kublet 
 Project_.[4]
 
