@@ -132,6 +132,33 @@
   }
   .lead strong { color: var(--ink); font-weight: 600; }
 
+  /* ---- publications ---- */
+  .pubs { margin: 0; padding: 0; list-style: none; counter-reset: pub; display: grid; gap: 1.25rem; }
+  .pub { position: relative; padding-left: 2rem; }
+  .pub::before {
+    counter-increment: pub;
+    content: counter(pub);
+    position: absolute;
+    left: 0;
+    top: .05rem;
+    font-family: var(--mono);
+    font-size: .74rem;
+    color: var(--accent-ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: grid;
+    place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+  .pub-title { margin: 0; font-weight: 600; font-size: 1.02rem; letter-spacing: -0.01em; text-wrap: balance; }
+  .pub-meta { margin: .32rem 0 0; color: var(--ink-soft); font-size: .92rem; }
+  .pub-meta b { color: var(--ink); font-weight: 600; }
+  .pub-venue { margin: .18rem 0 0; font-family: var(--mono); font-size: .77rem; color: var(--ink-faint); }
+  .pub .links { margin-top: .4rem; }
+  .pub-note { margin: 1.35rem 0 0; font-size: .88rem; color: var(--ink-faint); padding-left: 2rem; }
+
   /* ---- projects ---- */
   .group-label {
     font-family: var(--mono);
@@ -358,6 +385,19 @@
       full-stack mindset: <strong>full ownership from logic to infrastructure</strong>, and a track
       record of turning systems that work in a notebook or a lab into ones that hold up in production.
     </p>
+  </section>
+
+  <section aria-labelledby="s-pubs">
+    <h2 class="eyebrow" id="s-pubs">Publications</h2>
+    <ol class="pubs">
+      <li class="pub">
+        <p class="pub-title">SLICES SCC-Blueprint: A Reference Architecture for Serverless Cloud Continuum Research</p>
+        <p class="pub-meta">A. Sabbioni, <b>F. A. Ciraci</b>, A. Bujari, P. Bellavista</p>
+        <p class="pub-venue">2025 IEEE Conference on Standards for Communications and Networking (CSCN), pp. 1–6 · 2025</p>
+        <p class="links"><a href="https://doi.org/10.1109/CSCN67557.2025.11230599" target="_blank" rel="noopener">doi.org/10.1109/CSCN67557.2025.11230599 →</a></p>
+      </li>
+    </ol>
+    <p class="pub-note">Also authored an internal Fermilab R&amp;D technical report on the FPGA correlator/summing overlay — architecture, hardware/software co-design, and benchmark performance (2024).</p>
   </section>
 
   <section aria-labelledby="s-projects">
