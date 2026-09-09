@@ -1,0 +1,645 @@
+<title>Fabio Ciraci — Work Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #f4f6f7;
+    --surface: #ffffff;
+    --ink: #171b21;
+    --ink-soft: #576069;
+    --ink-faint: #8b939c;
+    --line: #e2e6e9;
+    --line-strong: #cfd5d9;
+    --accent: #0c7c7e;
+    --accent-ink: #0c6668;
+    --accent-soft: #e6f1f1;
+    --shadow: 0 1px 2px rgba(20, 30, 32, .04), 0 8px 30px rgba(20, 30, 32, .05);
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0d1013;
+      --surface: #15191e;
+      --ink: #e6eaee;
+      --ink-soft: #9aa3ad;
+      --ink-faint: #6b747e;
+      --line: #242a31;
+      --line-strong: #333b44;
+      --accent: #3ac9c1;
+      --accent-ink: #57d3cc;
+      --accent-soft: #11241f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 34px rgba(0, 0, 0, .34);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0d1013;
+    --surface: #15191e;
+    --ink: #e6eaee;
+    --ink-soft: #9aa3ad;
+    --ink-faint: #6b747e;
+    --line: #242a31;
+    --line-strong: #333b44;
+    --accent: #3ac9c1;
+    --accent-ink: #57d3cc;
+    --accent-soft: #11241f;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 34px rgba(0, 0, 0, .34);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: clamp(1.4rem, 4vw, 4rem) clamp(1rem, 4vw, 3.5rem) 5rem;
+  }
+
+  a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { text-decoration-color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+  /* ---- header ---- */
+  header { margin-bottom: 3rem; }
+  .name {
+    font-size: clamp(2.1rem, 5.5vw, 3.15rem);
+    line-height: 1.06;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 .65rem;
+    text-wrap: balance;
+  }
+  .tagline {
+    font-family: var(--mono);
+    font-size: clamp(.8rem, 1.7vw, .92rem);
+    font-weight: 500;
+    color: var(--accent-ink);
+    letter-spacing: .01em;
+    margin: 0 0 1.35rem;
+    text-wrap: balance;
+  }
+  .contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .55rem;
+    font-family: var(--mono);
+    font-size: .78rem;
+  }
+  .contact a, .contact span {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .32rem .6rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    background: var(--surface);
+  }
+  .contact a:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .contact .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex: none; }
+  .contact .muted { opacity: .72; }
+
+  /* ---- sections ---- */
+  section { margin-top: 2.9rem; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--ink-faint);
+    margin: 0 0 1.15rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .lead {
+    font-size: clamp(1rem, 2.1vw, 1.12rem);
+    color: var(--ink-soft);
+    max-width: 64ch;
+  }
+  .lead strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- projects ---- */
+  .group-label {
+    font-family: var(--mono);
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+    margin: 2.2rem 0 0;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+  }
+  .group-label::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+  }
+  .group-label:first-of-type { margin-top: 0; }
+
+  .project {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .project:last-child { border-bottom: 0; }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .project-name { font-size: 1.14rem; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+  .project-year {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin: .6rem 0 .75rem;
+  }
+  .stack span {
+    font-family: var(--mono);
+    font-size: .69rem;
+    letter-spacing: .02em;
+    color: var(--ink-soft);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: .16rem .44rem;
+  }
+  .project p { margin: .55rem 0 0; color: var(--ink-soft); }
+  .project ul {
+    margin: .7rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .38rem;
+  }
+  .project li {
+    position: relative;
+    padding-left: 1.05rem;
+    color: var(--ink-soft);
+    font-size: .95rem;
+  }
+  .project li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background: var(--accent);
+    opacity: .6;
+  }
+  .metric {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .5rem;
+    margin-top: .85rem;
+    padding: .4rem .7rem;
+    border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    background: var(--surface);
+    font-family: var(--mono);
+    font-size: .82rem;
+    color: var(--ink);
+  }
+  .metric b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .metric span { color: var(--ink-faint); }
+  .project .links { margin-top: .8rem; font-family: var(--mono); font-size: .78rem; }
+
+  /* ---- experience timeline ---- */
+  .timeline { display: grid; gap: 0; }
+  .job {
+    position: relative;
+    padding: 1.35rem 0 1.35rem 1.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .job:last-child { border-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.7rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+  }
+  .job::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 2.5rem;
+    bottom: -1px;
+    width: 1px;
+    background: var(--line);
+  }
+  .job:last-child::after { display: none; }
+  .job-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
+  .job-title { font-weight: 600; margin: 0; font-size: 1.03rem; }
+  .job-when {
+    font-family: var(--mono);
+    font-size: .75rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .job-org { color: var(--accent-ink); font-size: .9rem; margin: .15rem 0 .5rem; }
+  .job ul { margin: .5rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; }
+  .job li { color: var(--ink-soft); font-size: .93rem; }
+
+  /* ---- education / skills / langs ---- */
+  .stack-list { display: grid; gap: 0; }
+  .row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 1.5rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .row:last-child { border-bottom: 0; }
+  .row dt {
+    font-family: var(--mono);
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--ink-faint);
+    padding-top: .12rem;
+  }
+  .row dd { margin: 0; color: var(--ink-soft); }
+  .row dd .em { color: var(--ink); font-weight: 500; }
+
+  .edu-item { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  .edu-item:last-child { border-bottom: 0; }
+  .edu-item h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+  .edu-item p { margin: .2rem 0 0; color: var(--ink-soft); font-size: .9rem; font-family: var(--mono); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  @media (max-width: 620px) {
+    .row { grid-template-columns: 1fr; gap: .3rem; }
+    .row dt { padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .page > * { animation: rise .5s cubic-bezier(.2, .6, .2, 1) both; }
+    header { animation-delay: 0s; }
+    section:nth-of-type(1) { animation-delay: .04s; }
+    section:nth-of-type(2) { animation-delay: .08s; }
+    section:nth-of-type(3) { animation-delay: .12s; }
+    section:nth-of-type(n+4) { animation-delay: .16s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  }
+
+  @media print {
+    :root { --ground: #fff; --surface: #fff; --ink: #000; --ink-soft: #222; --ink-faint: #555; --line: #ccc; --line-strong: #999; --accent: #0c6668; --accent-ink: #0c6668; --accent-soft: #eee; }
+    .page { max-width: none; padding: 0 .4in; }
+    .page > * { animation: none; }
+    .project, .job, section { break-inside: avoid; }
+  }
+</style>
+
+<div class="page">
+  <header>
+    <h1 class="name">Fabio A. Ciraci</h1>
+    <p class="tagline">AI Engineer · LLM Infrastructure, Agentic Systems &amp; Production Data Platforms</p>
+    <ul class="contact">
+      <li><span class="dot" aria-hidden="true"></span><span class="muted">Bologna, Italy</span></li>
+      <li><a href="mailto:fabiociraci41@gmail.com">fabiociraci41@gmail.com</a></li>
+      <li><a href="https://github.com/FabioC-alt" target="_blank" rel="noopener">github.com/FabioC-alt</a></li>
+      <li><a href="https://www.linkedin.com/in/fabio-a-ciraci-281479161" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </header>
+
+  <section aria-labelledby="s-profile">
+    <h2 class="eyebrow" id="s-profile">Profile</h2>
+    <p class="lead">
+      AI and systems engineer with daily Python practice and hands-on experience taking language
+      models and distributed infrastructure <strong>from research into production</strong>. Doctoral
+      research focuses on parameter-efficient fine-tuning (PEFT) and distributed middleware for
+      orchestrating LLMs and agentic systems across cloud-native environments — deployment, context
+      handling, and runtime optimization. An industry background in AWS-based Kubernetes
+      infrastructure (Musixmatch) and FPGA-based hardware/software co-design (Fermilab) backs a
+      full-stack mindset: <strong>full ownership from logic to infrastructure</strong>, and a track
+      record of turning systems that work in a notebook or a lab into ones that hold up in production.
+    </p>
+  </section>
+
+  <section aria-labelledby="s-projects">
+    <h2 class="eyebrow" id="s-projects">Selected Projects</h2>
+
+    <p class="group-label">LLM systems &amp; fine-tuning</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">OctoLoRA — gradient-adaptive LoRA fine-tuning</h3>
+        <span class="project-year">2026</span>
+      </div>
+      <div class="stack"><span>Python</span><span>PyTorch</span><span>PEFT / LoRA+</span><span>SLURM</span><span>GSM8K</span></div>
+      <p>
+        A custom LoRA variant fine-tuning Meta-Llama-3.1-8B-Instruct on GSM8K math reasoning. A
+        hand-rolled <code>OctoLoRALayer</code> replaces frozen attention projections and adds a
+        per-layer gating mechanism that controls how much gradient reaches the <code>A</code> matrix
+        during backprop, driven by adaptive learning-rate ratios between the LoRA matrices — paired
+        with a LoRA+ optimizer that assigns separate learning rates to <code>A</code> and <code>B</code>.
+      </p>
+      <ul>
+        <li>Distributed training on a SLURM cluster.</li>
+        <li>Ablation harness with toggleable <code>--gate</code> / <code>--lora-plus</code> flags and four configuration variants for isolated testing.</li>
+        <li>Found and documented six pipeline bugs — including a data-handling error that trained the model on constant boilerplate instead of the questions — with an honest write-up of what each invalidated.</li>
+      </ul>
+      <div class="metric"><b>73.39%</b> GSM8K accuracy (3 seeds) <span>· +1.3 pts over vanilla LoRA (~72.10%)</span></div>
+      <p class="links"><a href="https://github.com/FabioC-alt/OctoLoRA" target="_blank" rel="noopener">github.com/FabioC-alt/OctoLoRA →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">RAGAnalysis — retrieval-augmented generation research sandbox</h3>
+        <span class="project-year">2026</span>
+      </div>
+      <div class="stack"><span>Python</span><span>Jupyter</span><span>Vector stores</span></div>
+      <p>
+        A comparative study of RAG methodologies: blended and semantic chunking strategies, GraphRAG
+        variants, federated RAG, and multiple-choice evaluation harnesses, backed by persisted vector
+        stores and checkpoints for reproducible runs.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/RAGAnalysis" target="_blank" rel="noopener">github.com/FabioC-alt/RAGAnalysis →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">Manuel — a minimal RAG pipeline, built to teach</h3>
+        <span class="project-year">2025</span>
+      </div>
+      <div class="stack"><span>Python</span><span>LangChain</span><span>ChromaDB</span></div>
+      <p>
+        A deliberately simple two-stage RAG pipeline — document ingestion, vector storage, similarity
+        search, LLM answer generation — written to demystify each component rather than to be
+        production-hardened, with an incremental roadmap toward chunking strategies, alternative
+        embedding models, and prompt optimization.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/Manuel" target="_blank" rel="noopener">github.com/FabioC-alt/Manuel →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">zotero-arxiv-daily <span style="font-weight:400;color:var(--ink-faint)">— contributor / fork</span></h3>
+        <span class="project-year">2025</span>
+      </div>
+      <div class="stack"><span>Python</span><span>GitHub Actions</span></div>
+      <p>
+        Automated daily arXiv recommendations matched against a Zotero library, with AI-generated
+        summaries delivered by email and run entirely on GitHub Actions — no local install.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/zotero-arxiv-daily" target="_blank" rel="noopener">github.com/FabioC-alt/zotero-arxiv-daily →</a></p>
+    </article>
+
+    <p class="group-label">Distributed systems &amp; cloud infrastructure</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">Master's Thesis — cloud orchestration for Smart City management</h3>
+        <span class="project-year">2025</span>
+      </div>
+      <div class="stack"><span>Kubernetes</span><span>eBPF</span><span>Service Mesh</span><span>Jupyter</span></div>
+      <p>
+        A comparative evaluation of six multi-cluster management platforms — Karmada, Liqo, Rancher,
+        Avesha, KubeStellar, and Istio — against a Smart City management scenario. For each tool:
+        whether it modifies cluster structure or adds a proprietary layer, its feature set, and its
+        strengths, weaknesses, and best-fit use cases.
+      </p>
+      <ul>
+        <li>Backed by a working lab of 158 commits covering cluster setup, network-traffic analysis, orchestration testing, and BPF experiments.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/FabioC-alt/masterThesis" target="_blank" rel="noopener">github.com/FabioC-alt/masterThesis →</a></p>
+    </article>
+
+    <p class="group-label">Embedded systems &amp; FPGA</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">FPGA signal detection at Fermilab (GQuEST experiment)</h3>
+        <span class="project-year">2024</span>
+      </div>
+      <div class="stack"><span>Xilinx Zynq-7000</span><span>Vivado HLx</span><span>PYNQ</span><span>AXI</span><span>Python</span></div>
+      <p>
+        Designed and deployed a custom FPGA-accelerated arithmetic overlay (correlator / summing
+        module) on a Xilinx Zynq-7000 SoC (Red Pitaya STEMlab) under Fermilab R&amp;D supervision, for
+        the GQuEST signal-detection experiment.
+      </p>
+      <ul>
+        <li>Hardware IP blocks in Vivado HLx offloading real-time streaming math and aggregation into the FPGA programmable logic.</li>
+        <li>Dual-ADC correlators, hardware and software FFT accelerators, spectrum analyzers, DMA streaming demos, and a compressive-sensing accelerator.</li>
+        <li>Integrated custom PL logic with the ARM processing system userspace via PYNQ and AXI interfaces — programmatic register control and low-latency data streaming.</li>
+        <li>Authored a technical publication report on architecture, hardware/software co-design, and benchmark performance.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/FabioC-alt/FPGAFermiLab" target="_blank" rel="noopener">github.com/FabioC-alt/FPGAFermiLab →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">AddingNumbersInFPGA — open guide to FPGA arithmetic</h3>
+        <span class="project-year">2024</span>
+      </div>
+      <div class="stack"><span>Tcl</span><span>Vivado</span><span>PYNQ</span><span>Red Pitaya 125-14</span></div>
+      <p>
+        A public, tutorial-style guide to numerical addition on the Red Pitaya 125-14: from
+        two-number addition to arrays and signed integers, wiring up AXI GPIO, DMA controllers, the
+        Zynq processing system, and custom HDL blocks, with XDC constraint files and IP documentation.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/AddingNumbersInFPGA" target="_blank" rel="noopener">github.com/FabioC-alt/AddingNumbersInFPGA →</a></p>
+    </article>
+
+    <p class="group-label">GPU &amp; performance</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">GPU Matrix Multiplication</h3>
+        <span class="project-year">2026</span>
+      </div>
+      <div class="stack"><span>Python</span><span>CUDA</span></div>
+      <p>
+        Coursework for "GPU-Accelerated Programming for AI and Computer Vision" (University of
+        Bologna). Walks matrix multiplication from a naive CPU baseline through cache-locality
+        optimization, a transposed-B approach, a tiling algorithm, and finally a CUDA GPU
+        implementation — benchmarking each step.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/GPU-Matrix-Multiplication-Project" target="_blank" rel="noopener">github.com/FabioC-alt/GPU-Matrix-Multiplication-Project →</a></p>
+    </article>
+
+    <p class="group-label">Applications &amp; personal tooling</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">SNQuiz — cross-platform exam-practice app</h3>
+        <span class="project-year">2024</span>
+      </div>
+      <div class="stack"><span>Flutter</span><span>Dart</span><span>Android + Windows</span></div>
+      <p>
+        A multiplatform study app for the Space Networks course: timed multiple-choice quizzes drawn
+        randomly from a 96-question bank. Shipped for Android (APK) and Windows (executable) on
+        Flutter 3.16.5 / Dart 3.2.3.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/SNQuiz" target="_blank" rel="noopener">github.com/FabioC-alt/SNQuiz →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">PostNews — faster unofficial client for Il Post</h3>
+        <span class="project-year">2025</span>
+      </div>
+      <div class="stack"><span>Python</span></div>
+      <p>
+        A personal project to make the Italian outlet Il Post's free feed faster and more accessible
+        than the official app, with podcast access planned.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/PostNews" target="_blank" rel="noopener">github.com/FabioC-alt/PostNews →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">DataMiningStudyRepo — course companion</h3>
+        <span class="project-year">2024</span>
+      </div>
+      <div class="stack"><span>Jupyter</span><span>scikit-learn</span></div>
+      <p>
+        Organized theory notes and lab implementations for the Data Mining &amp; Machine Learning
+        course at the University of Bologna: CRISP methodology, classification, regression,
+        clustering, and association rules.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/DataMiningStudyRepo" target="_blank" rel="noopener">github.com/FabioC-alt/DataMiningStudyRepo →</a></p>
+    </article>
+  </section>
+
+  <section aria-labelledby="s-exp">
+    <h2 class="eyebrow" id="s-exp">Experience</h2>
+    <div class="timeline">
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">PhD Candidate, Computer Science &amp; Engineering</h3>
+          <span class="job-when">Nov 2025 – Present</span>
+        </div>
+        <p class="job-org">University of Bologna — Mobile Middleware Research Group · Bologna, Italy</p>
+        <ul>
+          <li>Research and engineer distributed architectures and specialized middleware for language technologies and large-scale NLP/LLM systems.</li>
+          <li>Investigate efficient deployment, orchestration, and runtime optimization for language models and intelligent agents across cloud-native environments.</li>
+          <li>Develop systems-level solutions to compute, networking, and latency bottlenecks in language-technology pipelines.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Research Fellow (Ricercatore Borsista)</h3>
+          <span class="job-when">Apr 2025 – Nov 2025</span>
+        </div>
+        <p class="job-org">University of Bologna — Mobile Middleware Research Group · Bologna, Italy</p>
+        <ul>
+          <li>Laid the research groundwork on distributed AI infrastructure that developed into the current doctoral research on LLM middleware and PEFT fine-tuning.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Embedded Systems &amp; FPGA Engineer</h3>
+          <span class="job-when">Jul 2024 – Oct 2024</span>
+        </div>
+        <p class="job-org">Fermilab · Chicago, IL, USA</p>
+        <ul>
+          <li>Designed and deployed a custom FPGA-accelerated arithmetic overlay on a Xilinx Zynq-7000 SoC (Red Pitaya STEMlab) under Fermilab R&amp;D supervision.</li>
+          <li>Implemented hardware IP blocks in Vivado HLx to offload real-time streaming math and aggregation into the FPGA programmable logic.</li>
+          <li>Integrated custom PL logic with the ARM processing system userspace via PYNQ and AXI interfaces — programmatic register control and low-latency data streaming.</li>
+          <li>Authored a technical publication report on architecture, co-design, and benchmark performance.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Cloud Systems Engineer</h3>
+          <span class="job-when">Oct 2023 – Apr 2024</span>
+        </div>
+        <p class="job-org">Musixmatch · Bologna, Italy</p>
+        <ul>
+          <li>Deployed and operated containerized workloads (Docker) on AWS-based Kubernetes clusters, evaluating zero-trust in-cluster networking across service mesh (Istio, Linkerd) and eBPF-based architectures (Cilium).</li>
+          <li>Analyzed mTLS, network-policy enforcement, and observability trade-offs between user-space sidecar proxies and kernel-level eBPF packet processing.</li>
+          <li>Assessed system overhead, latency, throughput, and CPU/memory utilization for high-scale microservices, and delivered architectural recommendations and proof-of-concept deployment guidelines.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head">
+          <h3 class="job-title">Audio Engineer &amp; Production Lead</h3>
+          <span class="job-when">Sep 2018 – Aug 2025</span>
+        </div>
+        <p class="job-org">StudioK · Bologna, Italy</p>
+        <ul>
+          <li>Led and produced numerous podcasts for Radio1088 and later StudioK, directing a dedicated production team.</li>
+          <li>Managed the association's budget and studio equipment over a seven-year period.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="s-edu">
+    <h2 class="eyebrow" id="s-edu">Education</h2>
+    <div class="edu-item">
+      <h3>M.Sc. (Laurea Magistrale), Computer Engineering</h3>
+      <p>University of Bologna · 2022 – 2025</p>
+    </div>
+    <div class="edu-item">
+      <h3>B.Sc. (Laurea), Industrial &amp; Management Engineering</h3>
+      <p>University of Bologna · 2013 – 2018</p>
+    </div>
+    <div class="edu-item">
+      <h3>Liceo Scientifico, Scienze Applicate</h3>
+      <p>Liceo Pepe</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="s-skills">
+    <h2 class="eyebrow" id="s-skills">Technical Skills</h2>
+    <dl class="stack-list">
+      <div class="row"><dt>Programming</dt><dd><span class="em">Python</span> (daily use), Linux</dd></div>
+      <div class="row"><dt>AI / LLM systems</dt><dd>LLM fine-tuning (PEFT / LoRA), NLP systems, agentic systems, model deployment &amp; orchestration, distributed middleware, RAG</dd></div>
+      <div class="row"><dt>Cloud &amp; infra</dt><dd>Kubernetes, Docker, AWS, service mesh (Istio, Linkerd), eBPF (Cilium), mTLS, zero-trust architecture, microservices, observability</dd></div>
+      <div class="row"><dt>Embedded &amp; hardware</dt><dd>FPGA design (Xilinx Zynq-7000 / Red Pitaya STEMlab), Vivado HLx, PYNQ, AXI interfaces, hardware/software co-design</dd></div>
+      <div class="row"><dt>GPU</dt><dd>CUDA, performance optimization</dd></div>
+      <div class="row"><dt>Professional</dt><dd>Public speaking, team leadership, project &amp; budget management</dd></div>
+      <div class="row"><dt>Languages</dt><dd>Italian — native · English — C1 (certified)</dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <span>Fabio A. Ciraci — Work Profile</span>
+    <span>Updated September 2026</span>
+  </footer>
+</div>
