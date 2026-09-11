@@ -560,14 +560,20 @@
 
     <article class="project">
       <div class="project-head">
-        <h3 class="project-name">PostNews — faster unofficial client for Il Post</h3>
+        <h3 class="project-name">PostNews — AI-generated news podcasts over Telegram</h3>
         <span class="project-year">2025</span>
       </div>
-      <div class="stack"><span>Python</span></div>
+      <div class="stack"><span>Python</span><span>Anthropic Claude API</span><span>Telegram Bot API</span><span>edge-tts</span><span>Docker</span></div>
       <p>
-        A personal project to make the Italian outlet Il Post's free feed faster and more accessible
-        than the official app, with podcast access planned.
+        A Telegram bot that turns the Italian outlet Il Post's free RSS feed into personalized,
+        on-demand news podcasts: users pick interests and a target length, and the bot curates
+        relevant stories with Claude Haiku, scripts a two-host anchor/analyst dialogue with Claude
+        Opus, and renders it to audio with Microsoft's edge-tts.
       </p>
+      <ul>
+        <li>Per-user interest filtering, language, and voice selection; daily episode limits and a duration cap, backed by SQLite.</li>
+        <li>Ships as a Telegram bot or a standalone CLI, with Docker / Docker Compose for VPS deployment.</li>
+      </ul>
       <p class="links"><a href="https://github.com/FabioC-alt/PostNews" target="_blank" rel="noopener">github.com/FabioC-alt/PostNews →</a></p>
     </article>
 
