@@ -403,7 +403,56 @@
   <section aria-labelledby="s-projects">
     <h2 class="eyebrow" id="s-projects">Selected Projects</h2>
 
-    <p class="group-label">LLM systems &amp; fine-tuning</p>
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">SlurmMonitor — live SLURM job dashboard</h3>
+        <span class="project-year">Sep 2026</span>
+      </div>
+      <div class="stack"><span>FastAPI</span><span>Python</span><span>Docker</span><span>SSH</span></div>
+      <p>
+        A self-hosted dashboard for keeping an eye on your own SLURM jobs without living in a terminal:
+        a FastAPI backend polls <code>squeue</code> over SSH every 20 seconds, a vanilla JS frontend
+        refreshes every 10, with client-side filtering by job name, state, and partition and a quick
+        stats view of running versus pending jobs. No database, jobs are cached in memory between polls,
+        and each user only ever sees their own queue. Ships as a single Docker container.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/SlurmMonitor" target="_blank" rel="noopener">github.com/FabioC-alt/SlurmMonitor →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">SharedRoommates — shared-household management app</h3>
+        <span class="project-year">Sep 2026</span>
+      </div>
+      <div class="stack"><span>Node.js</span><span>Docker</span><span>Tailscale</span><span>PWA</span></div>
+      <p>
+        A self-hosted web app for a shared flat: grocery lists, bill splitting with a debt-settling
+        algorithm, chores and a shared calendar, a movie wishlist, and a household bulletin board, all
+        behind PIN-based auth. Zero-dependency Node.js backend, packaged with Docker Compose and
+        reachable over a Tailscale VPN, with an admin panel for user management, server telemetry, and
+        database backups.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/SharedRommates" target="_blank" rel="noopener">github.com/FabioC-alt/SharedRommates →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">PostNews — AI-generated news podcasts over Telegram</h3>
+        <span class="project-year">Sep 2026</span>
+      </div>
+      <div class="stack"><span>Python</span><span>Anthropic Claude API</span><span>Telegram Bot API</span><span>edge-tts</span><span>Docker</span></div>
+      <p>
+        A Telegram bot that turns the Italian outlet Il Post's free RSS feed into personalized,
+        on-demand news podcasts: users pick interests and a target length, and the bot curates
+        relevant stories with Claude Haiku, scripts a two-host anchor/analyst dialogue with Claude
+        Opus, and renders it to audio with Microsoft's edge-tts.
+      </p>
+      <ul>
+        <li>Per-user interest filtering, language, and voice selection; daily episode limits and a duration cap, backed by SQLite.</li>
+        <li>Ships as a Telegram bot or a standalone CLI, with Docker / Docker Compose for VPS deployment.</li>
+      </ul>
+      <p class="links"><a href="https://github.com/FabioC-alt/PostNews" target="_blank" rel="noopener">github.com/FabioC-alt/PostNews →</a></p>
+    </article>
 
     <article class="project">
       <div class="project-head">
@@ -429,24 +478,37 @@
 
     <article class="project">
       <div class="project-head">
-        <h3 class="project-name">SharedRoommates — shared-household management app</h3>
+        <h3 class="project-name">Network simulation with ns-3 and OpenAI Gym</h3>
         <span class="project-year">2026</span>
       </div>
-      <div class="stack"><span>Node.js</span><span>Docker</span><span>Tailscale</span><span>PWA</span></div>
+      <div class="stack"><span>C++</span><span>ns-3</span><span>OpenAI Gym</span><span>Reinforcement Learning</span></div>
       <p>
-        A self-hosted web app for a shared flat: grocery lists, bill splitting with a debt-settling
-        algorithm, chores and a shared calendar, a movie wishlist, and a household bulletin board, all
-        behind PIN-based auth. Zero-dependency Node.js backend, packaged with Docker Compose and
-        reachable over a Tailscale VPN, with an admin panel for user management, server telemetry, and
-        database backups.
+        A network simulation study built in ns-3, wiring up an OpenAI Gym style interface across a set
+        of simulated nodes to run reinforcement learning experiments over the simulated network.
+        Picked up C++ directly through building it. The associated results are currently under review
+        at a conference, so specifics are kept light for now.
       </p>
-      <p class="links"><a href="https://github.com/FabioC-alt/SharedRommates" target="_blank" rel="noopener">github.com/FabioC-alt/SharedRommates →</a></p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">GPU Matrix Multiplication</h3>
+        <span class="project-year">Jul 2026</span>
+      </div>
+      <div class="stack"><span>Python</span><span>CUDA</span></div>
+      <p>
+        Coursework for "GPU-Accelerated Programming for AI and Computer Vision" (University of
+        Bologna). Walks matrix multiplication from a naive CPU baseline through cache-locality
+        optimization, a transposed-B approach, a tiling algorithm, and finally a CUDA GPU
+        implementation — benchmarking each step.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/GPU-Matrix-Multiplication-Project" target="_blank" rel="noopener">github.com/FabioC-alt/GPU-Matrix-Multiplication-Project →</a></p>
     </article>
 
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">RAGAnalysis — retrieval-augmented generation research sandbox</h3>
-        <span class="project-year">2026</span>
+        <span class="project-year">Mar 2026</span>
       </div>
       <div class="stack"><span>Python</span><span>Jupyter</span><span>Vector stores</span></div>
       <p>
@@ -460,7 +522,7 @@
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">Manuel — a minimal RAG pipeline, built to teach</h3>
-        <span class="project-year">2025</span>
+        <span class="project-year">Dec 2025</span>
       </div>
       <div class="stack"><span>Python</span><span>LangChain</span><span>ChromaDB</span></div>
       <p>
@@ -475,7 +537,7 @@
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">zotero-arxiv-daily <span style="font-weight:400;color:var(--ink-faint)">— contributor / fork</span></h3>
-        <span class="project-year">2025</span>
+        <span class="project-year">Nov 2025</span>
       </div>
       <div class="stack"><span>Python</span><span>GitHub Actions</span></div>
       <p>
@@ -485,12 +547,10 @@
       <p class="links"><a href="https://github.com/FabioC-alt/zotero-arxiv-daily" target="_blank" rel="noopener">github.com/FabioC-alt/zotero-arxiv-daily →</a></p>
     </article>
 
-    <p class="group-label">Distributed systems &amp; cloud infrastructure</p>
-
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">Master's Thesis — cloud orchestration for Smart City management</h3>
-        <span class="project-year">2025</span>
+        <span class="project-year">Sep 2025</span>
       </div>
       <div class="stack"><span>Kubernetes</span><span>eBPF</span><span>Service Mesh</span><span>Jupyter</span></div>
       <p>
@@ -507,40 +567,36 @@
 
     <article class="project">
       <div class="project-head">
-        <h3 class="project-name">Network simulation with ns-3 and OpenAI Gym</h3>
-        <span class="project-year">2026</span>
+        <h3 class="project-name">DataMiningStudyRepo — course companion</h3>
+        <span class="project-year">Jan 2025</span>
       </div>
-      <div class="stack"><span>C++</span><span>ns-3</span><span>OpenAI Gym</span><span>Reinforcement Learning</span></div>
+      <div class="stack"><span>Jupyter</span><span>scikit-learn</span></div>
       <p>
-        A network simulation study built in ns-3, wiring up an OpenAI Gym style interface across a set
-        of simulated nodes to run reinforcement learning experiments over the simulated network.
-        Picked up C++ directly through building it. The associated results are currently under review
-        at a conference, so specifics are kept light for now.
+        Organized theory notes and lab implementations for the Data Mining &amp; Machine Learning
+        course at the University of Bologna: CRISP methodology, classification, regression,
+        clustering, and association rules.
       </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/DataMiningStudyRepo" target="_blank" rel="noopener">github.com/FabioC-alt/DataMiningStudyRepo →</a></p>
     </article>
 
     <article class="project">
       <div class="project-head">
-        <h3 class="project-name">SlurmMonitor — live SLURM job dashboard</h3>
-        <span class="project-year">2026</span>
+        <h3 class="project-name">SNQuiz — cross-platform exam-practice app</h3>
+        <span class="project-year">Oct 2024</span>
       </div>
-      <div class="stack"><span>FastAPI</span><span>Python</span><span>Docker</span><span>SSH</span></div>
+      <div class="stack"><span>Flutter</span><span>Dart</span><span>Android + Windows</span></div>
       <p>
-        A self-hosted dashboard for keeping an eye on your own SLURM jobs without living in a terminal:
-        a FastAPI backend polls <code>squeue</code> over SSH every 20 seconds, a vanilla JS frontend
-        refreshes every 10, with client-side filtering by job name, state, and partition and a quick
-        stats view of running versus pending jobs. No database, jobs are cached in memory between polls,
-        and each user only ever sees their own queue. Ships as a single Docker container.
+        A multiplatform study app for the Space Networks course: timed multiple-choice quizzes drawn
+        randomly from a 96-question bank. Shipped for Android (APK) and Windows (executable) on
+        Flutter 3.16.5 / Dart 3.2.3.
       </p>
-      <p class="links"><a href="https://github.com/FabioC-alt/SlurmMonitor" target="_blank" rel="noopener">github.com/FabioC-alt/SlurmMonitor →</a></p>
+      <p class="links"><a href="https://github.com/FabioC-alt/SNQuiz" target="_blank" rel="noopener">github.com/FabioC-alt/SNQuiz →</a></p>
     </article>
-
-    <p class="group-label">Embedded systems &amp; FPGA</p>
 
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">FPGA signal detection at Fermilab (GQuEST experiment)</h3>
-        <span class="project-year">2024</span>
+        <span class="project-year">Sep 2024</span>
       </div>
       <div class="stack"><span>Xilinx Zynq-7000</span><span>Vivado HLx</span><span>PYNQ</span><span>AXI</span><span>Python</span></div>
       <p>
@@ -560,7 +616,7 @@
     <article class="project">
       <div class="project-head">
         <h3 class="project-name">AddingNumbersInFPGA — open guide to FPGA arithmetic</h3>
-        <span class="project-year">2024</span>
+        <span class="project-year">Sep 2024</span>
       </div>
       <div class="stack"><span>Tcl</span><span>Vivado</span><span>PYNQ</span><span>Red Pitaya 125-14</span></div>
       <p>
@@ -569,72 +625,6 @@
         Zynq processing system, and custom HDL blocks, with XDC constraint files and IP documentation.
       </p>
       <p class="links"><a href="https://github.com/FabioC-alt/AddingNumbersInFPGA" target="_blank" rel="noopener">github.com/FabioC-alt/AddingNumbersInFPGA →</a></p>
-    </article>
-
-    <p class="group-label">GPU &amp; performance</p>
-
-    <article class="project">
-      <div class="project-head">
-        <h3 class="project-name">GPU Matrix Multiplication</h3>
-        <span class="project-year">2026</span>
-      </div>
-      <div class="stack"><span>Python</span><span>CUDA</span></div>
-      <p>
-        Coursework for "GPU-Accelerated Programming for AI and Computer Vision" (University of
-        Bologna). Walks matrix multiplication from a naive CPU baseline through cache-locality
-        optimization, a transposed-B approach, a tiling algorithm, and finally a CUDA GPU
-        implementation — benchmarking each step.
-      </p>
-      <p class="links"><a href="https://github.com/FabioC-alt/GPU-Matrix-Multiplication-Project" target="_blank" rel="noopener">github.com/FabioC-alt/GPU-Matrix-Multiplication-Project →</a></p>
-    </article>
-
-    <p class="group-label">Applications &amp; personal tooling</p>
-
-    <article class="project">
-      <div class="project-head">
-        <h3 class="project-name">SNQuiz — cross-platform exam-practice app</h3>
-        <span class="project-year">2024</span>
-      </div>
-      <div class="stack"><span>Flutter</span><span>Dart</span><span>Android + Windows</span></div>
-      <p>
-        A multiplatform study app for the Space Networks course: timed multiple-choice quizzes drawn
-        randomly from a 96-question bank. Shipped for Android (APK) and Windows (executable) on
-        Flutter 3.16.5 / Dart 3.2.3.
-      </p>
-      <p class="links"><a href="https://github.com/FabioC-alt/SNQuiz" target="_blank" rel="noopener">github.com/FabioC-alt/SNQuiz →</a></p>
-    </article>
-
-    <article class="project">
-      <div class="project-head">
-        <h3 class="project-name">PostNews — AI-generated news podcasts over Telegram</h3>
-        <span class="project-year">2025</span>
-      </div>
-      <div class="stack"><span>Python</span><span>Anthropic Claude API</span><span>Telegram Bot API</span><span>edge-tts</span><span>Docker</span></div>
-      <p>
-        A Telegram bot that turns the Italian outlet Il Post's free RSS feed into personalized,
-        on-demand news podcasts: users pick interests and a target length, and the bot curates
-        relevant stories with Claude Haiku, scripts a two-host anchor/analyst dialogue with Claude
-        Opus, and renders it to audio with Microsoft's edge-tts.
-      </p>
-      <ul>
-        <li>Per-user interest filtering, language, and voice selection; daily episode limits and a duration cap, backed by SQLite.</li>
-        <li>Ships as a Telegram bot or a standalone CLI, with Docker / Docker Compose for VPS deployment.</li>
-      </ul>
-      <p class="links"><a href="https://github.com/FabioC-alt/PostNews" target="_blank" rel="noopener">github.com/FabioC-alt/PostNews →</a></p>
-    </article>
-
-    <article class="project">
-      <div class="project-head">
-        <h3 class="project-name">DataMiningStudyRepo — course companion</h3>
-        <span class="project-year">2024</span>
-      </div>
-      <div class="stack"><span>Jupyter</span><span>scikit-learn</span></div>
-      <p>
-        Organized theory notes and lab implementations for the Data Mining &amp; Machine Learning
-        course at the University of Bologna: CRISP methodology, classification, regression,
-        clustering, and association rules.
-      </p>
-      <p class="links"><a href="https://github.com/FabioC-alt/DataMiningStudyRepo" target="_blank" rel="noopener">github.com/FabioC-alt/DataMiningStudyRepo →</a></p>
     </article>
   </section>
 
