@@ -519,6 +519,22 @@
       </p>
     </article>
 
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-name">SlurmMonitor — live SLURM job dashboard</h3>
+        <span class="project-year">2026</span>
+      </div>
+      <div class="stack"><span>FastAPI</span><span>Python</span><span>Docker</span><span>SSH</span></div>
+      <p>
+        A self-hosted dashboard for keeping an eye on your own SLURM jobs without living in a terminal:
+        a FastAPI backend polls <code>squeue</code> over SSH every 20 seconds, a vanilla JS frontend
+        refreshes every 10, with client-side filtering by job name, state, and partition and a quick
+        stats view of running versus pending jobs. No database, jobs are cached in memory between polls,
+        and each user only ever sees their own queue. Ships as a single Docker container.
+      </p>
+      <p class="links"><a href="https://github.com/FabioC-alt/SlurmMonitor" target="_blank" rel="noopener">github.com/FabioC-alt/SlurmMonitor →</a></p>
+    </article>
+
     <p class="group-label">Embedded systems &amp; FPGA</p>
 
     <article class="project">
