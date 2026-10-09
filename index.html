@@ -416,6 +416,11 @@
         stats view of running versus pending jobs. No database, jobs are cached in memory between polls,
         and each user only ever sees their own queue. Ships as a single Docker container.
       </p>
+      <ul>
+        <li>Small JSON API (<code>/api/jobs</code>, <code>/api/refresh</code>, <code>/api/stats</code>) behind the dashboard, and a frontend that detects its mount path so it runs at <code>/</code> or behind a reverse proxy prefix.</li>
+        <li>Hardened SSH polling: read-only key mount, non-interactive <code>BatchMode</code>, multiplexing disabled so a stale connection never blocks a poll, no credentials in the repo.</li>
+        <li>Deliberately a live snapshot of <code>squeue</code>, not job history from <code>sacct</code>.</li>
+      </ul>
       <p class="links"><a href="https://github.com/FabioC-alt/SlurmMonitor" target="_blank" rel="noopener">github.com/FabioC-alt/SlurmMonitor →</a></p>
     </article>
 
@@ -426,12 +431,15 @@
       </div>
       <div class="stack"><span>Node.js</span><span>Docker</span><span>Tailscale</span><span>PWA</span></div>
       <p>
-        A self-hosted web app for a shared flat: grocery lists, bill splitting with a debt-settling
-        algorithm, chores and a shared calendar, a movie wishlist, and a household bulletin board, all
-        behind PIN-based auth. Zero-dependency Node.js backend, packaged with Docker Compose and
-        reachable over a Tailscale VPN, with an admin panel for user management, server telemetry, and
-        database backups.
+        A self-hosted web app for a shared flat with six panes: grocery list, news aggregator, bulletin
+        board, bill splitting with a debt-settling algorithm, a movie and series wishlist, and a shared
+        calendar for chores and events. Zero-dependency Node.js REST backend with a vanilla JS single-page
+        frontend, packaged with Docker Compose and reachable over a Tailscale VPN.
       </p>
+      <ul>
+        <li>Role-based access (admin, roommate, guest) with 4-digit PIN login, self-service profiles, and a read-only guest mode.</li>
+        <li>Admin partition for user and role management, house settings including a Wi-Fi join QR code, server telemetry, and database backup and cleanup.</li>
+      </ul>
       <p class="links"><a href="https://github.com/FabioC-alt/SharedRommates" target="_blank" rel="noopener">github.com/FabioC-alt/SharedRommates →</a></p>
     </article>
 
@@ -449,7 +457,8 @@
       </p>
       <ul>
         <li>Per-user interest filtering, language, and voice selection; daily episode limits and a duration cap, backed by SQLite.</li>
-        <li>Ships as a Telegram bot or a standalone CLI, with Docker / Docker Compose for VPS deployment.</li>
+        <li>Modular pipeline, one file per stage: feed fetch, Haiku curation, Opus scriptwriting to structured JSON, edge-tts rendering per turn, and MP3 stitching, with the TTS engine designed to be swappable.</li>
+        <li>Delivers audio, transcript and sources in Telegram; ships as a bot or a standalone CLI, with Docker / Docker Compose (ffmpeg bundled) for VPS deployment.</li>
       </ul>
       <p class="links"><a href="https://github.com/FabioC-alt/PostNews" target="_blank" rel="noopener">github.com/FabioC-alt/PostNews →</a></p>
     </article>
